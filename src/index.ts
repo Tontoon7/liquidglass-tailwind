@@ -2,7 +2,7 @@ import plugin from "tailwindcss/plugin";
 import { liquidGlassTheme } from "./theme";
 
 const liquidGlass = plugin(
-  ({ addComponents, addUtilities, matchUtilities, theme }) => {
+  ({ addComponents, addUtilities, addBase, theme }) => {
     // Base glass surface utility
     addUtilities({
       ".glass-surface": {
@@ -24,7 +24,7 @@ const liquidGlass = plugin(
     });
 
     // Specular shine overlay
-    addUtilities({
+    addComponents({
       ".glass-shine": {
         position: "relative",
         overflow: "hidden",
@@ -53,15 +53,20 @@ const liquidGlass = plugin(
       },
     });
 
-    // Accessibility: reduced transparency fallback
-    addUtilities({
+    // Accessibility: reduced transparency & motion fallbacks
+    addBase({
       "@media (prefers-reduced-transparency: reduce)": {
-        ".glass-surface, .glass-surface-sm, .glass-surface-lg, .glass-surface-xl":
+        ".glass-surface, .glass-surface-sm, .glass-surface-lg, .glass-surface-xl, .glass-card, .glass-card-elevated, .glass-nav, .glass-modal":
           {
             "backdrop-filter": "none",
             "-webkit-backdrop-filter": "none",
             background: "rgba(30, 30, 30, 0.95)",
           },
+      },
+      "@media (prefers-reduced-motion: reduce)": {
+        ".glass-btn, .glass-btn-secondary, .glass-btn-pill": {
+          transition: "none",
+        },
       },
     });
 

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liquid Glass — Tailwind CSS Plugin Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-animated min-h-screen text-white overflow-x-hidden">
+
+  <!-- Background orbs -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="glass-nav h-16 flex items-center px-6 lg:px-12">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-glass-sm bg-white/20 flex items-center justify-center">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      </div>
+      <span class="font-semibold text-lg tracking-tight">Liquid Glass</span>
+    </div>
+    <div class="hidden md:flex items-center gap-1 ml-8">
+      <a href="#components" class="px-4 py-2 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/10 transition-all">Components</a>
+      <a href="#buttons" class="px-4 py-2 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/10 transition-all">Buttons</a>
+      <a href="#forms" class="px-4 py-2 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/10 transition-all">Forms</a>
+      <a href="#cards" class="px-4 py-2 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/10 transition-all">Cards</a>
+    </div>
+    <div class="ml-auto">
+      <a href="https://github.com/Tontoon7/liquidglass-tailwind" target="_blank" class="glass-btn-pill text-sm text-white/90">
+        <svg class="w-4 h-4 inline -mt-0.5 mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 pt-28 pb-20 space-y-20">
+
+    <!-- Hero -->
+    <section class="demo-section text-center space-y-6 py-12">
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
+        Liquid Glass
+      </h1>
+      <p class="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
+        Apple's iOS 26 design language, natively in Tailwind CSS.<br/>
+        Translucent surfaces. Specular highlights. Accessible by default.
+      </p>
+      <div class="flex items-center justify-center gap-4 pt-4">
+        <code class="glass-card glass-shine px-5 py-3 text-sm font-mono !rounded-xl">
+          npm install liquidglass-tailwind
+        </code>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section id="buttons" class="demo-section space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight">Buttons</h2>
+      <p class="text-white/50 text-sm">Classes: <code class="text-white/70">glass-btn</code> · <code class="text-white/70">glass-btn-secondary</code> · <code class="text-white/70">glass-btn-pill</code></p>
+
+      <div class="glass-card glass-shine space-y-8">
+        <!-- Primary -->
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider">Primary</h3>
+          <div class="flex flex-wrap gap-4">
+            <button class="glass-btn text-white">Default</button>
+            <button class="glass-btn text-white bg-blue-500/25 border-blue-400/20">Accent</button>
+            <button class="glass-btn text-white bg-emerald-500/25 border-emerald-400/20">Success</button>
+            <button class="glass-btn text-white bg-red-500/25 border-red-400/20">Danger</button>
+          </div>
+        </div>
+
+        <!-- Secondary -->
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider">Secondary</h3>
+          <div class="flex flex-wrap gap-4">
+            <button class="glass-btn-secondary text-white/90">Default</button>
+            <button class="glass-btn-secondary text-white/90">Settings</button>
+            <button class="glass-btn-secondary text-white/90">Cancel</button>
+          </div>
+        </div>
+
+        <!-- Pills -->
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider">Pills</h3>
+          <div class="flex flex-wrap gap-3">
+            <button class="glass-btn-pill text-white/90">Get Started</button>
+            <button class="glass-btn-pill text-white/90">Learn More</button>
+            <button class="glass-btn-pill text-white/90 bg-purple-500/20 border-purple-400/15">New Feature</button>
+          </div>
+        </div>
+
+        <!-- FAB -->
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider">Floating Action</h3>
+          <div class="flex flex-wrap gap-4">
+            <button class="glass-btn w-12 h-12 !rounded-full !px-0 text-white">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+            </button>
+            <button class="glass-btn w-12 h-12 !rounded-full !px-0 text-white bg-blue-500/25 border-blue-400/20">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+            </button>
+            <button class="glass-btn w-12 h-12 !rounded-full !px-0 text-white bg-emerald-500/25 border-emerald-400/20">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section id="cards" class="demo-section space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight">Cards</h2>
+      <p class="text-white/50 text-sm">Classes: <code class="text-white/70">glass-card</code> · <code class="text-white/70">glass-card-elevated</code> · <code class="text-white/70">glass-shine</code></p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Standard Card -->
+        <div class="glass-card glass-shine space-y-4">
+          <div class="w-10 h-10 rounded-glass-sm bg-blue-500/20 flex items-center justify-center">
+            <svg class="w-5 h-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          </div>
+          <h3 class="font-semibold text-lg">Glass Card</h3>
+          <p class="text-white/60 text-sm leading-relaxed">Standard translucent card with backdrop blur and subtle border. Perfect for content sections.</p>
+        </div>
+
+        <!-- Elevated Card -->
+        <div class="glass-card-elevated glass-shine space-y-4">
+          <div class="w-10 h-10 rounded-glass-sm bg-purple-500/20 flex items-center justify-center">
+            <svg class="w-5 h-5 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+          </div>
+          <h3 class="font-semibold text-lg">Elevated Card</h3>
+          <p class="text-white/60 text-sm leading-relaxed">Higher prominence with stronger blur and deeper shadow. Use for featured or primary content.</p>
+        </div>
+
+        <!-- Card with image -->
+        <div class="glass-card glass-shine !p-0 overflow-hidden">
+          <div class="h-36 bg-gradient-to-br from-cyan-500/30 to-blue-600/30 flex items-center justify-center">
+            <svg class="w-12 h-12 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" /></svg>
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 class="font-semibold">Media Card</h3>
+            <p class="text-white/60 text-sm">With image area and content section.</p>
+          </div>
+        </div>
+
+        <!-- Stats Card -->
+        <div class="glass-card glass-shine text-center space-y-2">
+          <p class="text-4xl font-bold tracking-tight">2.4k</p>
+          <p class="text-white/50 text-sm">Active users</p>
+        </div>
+
+        <!-- Stats Card -->
+        <div class="glass-card glass-shine text-center space-y-2">
+          <p class="text-4xl font-bold tracking-tight text-emerald-300">99.9%</p>
+          <p class="text-white/50 text-sm">Uptime</p>
+        </div>
+
+        <!-- Stats Card -->
+        <div class="glass-card glass-shine text-center space-y-2">
+          <p class="text-4xl font-bold tracking-tight text-blue-300">14ms</p>
+          <p class="text-white/50 text-sm">Avg. response</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms -->
+    <section id="forms" class="demo-section space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight">Form Controls</h2>
+      <p class="text-white/50 text-sm">Classes: <code class="text-white/70">glass-input</code> · <code class="text-white/70">glass-segment</code></p>
+
+      <div class="glass-card glass-shine max-w-lg space-y-6">
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-white/70">Email</label>
+          <input type="email" class="glass-input text-white" placeholder="you@example.com" />
+        </div>
+
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-white/70">Password</label>
+          <input type="password" class="glass-input text-white" placeholder="Enter your password" />
+        </div>
+
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-white/70">Message</label>
+          <textarea class="glass-input text-white resize-none h-24" placeholder="Type your message..."></textarea>
+        </div>
+
+        <button class="glass-btn text-white w-full">Sign In</button>
+      </div>
+    </section>
+
+    <!-- Segmented Controls -->
+    <section class="demo-section space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight">Segmented Controls</h2>
+      <p class="text-white/50 text-sm">Classes: <code class="text-white/70">glass-segment</code> · <code class="text-white/70">glass-segment-item</code> · <code class="text-white/70">glass-segment-item-active</code></p>
+
+      <div class="glass-card glass-shine space-y-8">
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider">Default</h3>
+          <div class="glass-segment">
+            <button class="glass-segment-item glass-segment-item-active text-white">All</button>
+            <button class="glass-segment-item text-white/60 hover:text-white/80">Active</button>
+            <button class="glass-segment-item text-white/60 hover:text-white/80">Archived</button>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider">View Toggle</h3>
+          <div class="glass-segment">
+            <button class="glass-segment-item glass-segment-item-active text-white">
+              <svg class="w-4 h-4 inline -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+              Grid
+            </button>
+            <button class="glass-segment-item text-white/60 hover:text-white/80">
+              <svg class="w-4 h-4 inline -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+              List
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Surfaces -->
+    <section id="components" class="demo-section space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight">Glass Surfaces</h2>
+      <p class="text-white/50 text-sm">Classes: <code class="text-white/70">glass-surface-sm</code> · <code class="text-white/70">glass-surface</code> · <code class="text-white/70">glass-surface-lg</code> · <code class="text-white/70">glass-surface-xl</code></p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-surface-sm bg-white/10 border border-white/15 rounded-glass-lg p-6 text-center space-y-2">
+          <p class="text-sm font-medium">Surface SM</p>
+          <p class="text-xs text-white/50">blur(8px)</p>
+        </div>
+        <div class="glass-surface bg-white/10 border border-white/15 rounded-glass-lg p-6 text-center space-y-2">
+          <p class="text-sm font-medium">Surface</p>
+          <p class="text-xs text-white/50">blur(16px)</p>
+        </div>
+        <div class="glass-surface-lg bg-white/10 border border-white/15 rounded-glass-lg p-6 text-center space-y-2">
+          <p class="text-sm font-medium">Surface LG</p>
+          <p class="text-xs text-white/50">blur(24px)</p>
+        </div>
+        <div class="glass-surface-xl bg-white/10 border border-white/15 rounded-glass-lg p-6 text-center space-y-2">
+          <p class="text-sm font-medium">Surface XL</p>
+          <p class="text-xs text-white/50">blur(40px)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Preview -->
+    <section class="demo-section space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight">Modal / Sheet</h2>
+      <p class="text-white/50 text-sm">Class: <code class="text-white/70">glass-modal</code></p>
+
+      <div class="glass-card !p-0 overflow-hidden">
+        <!-- Simulated screen behind -->
+        <div class="h-48 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 p-6 flex items-start">
+          <div class="space-y-3 opacity-50">
+            <div class="h-4 w-48 bg-white/20 rounded-full"></div>
+            <div class="h-3 w-64 bg-white/10 rounded-full"></div>
+            <div class="h-3 w-40 bg-white/10 rounded-full"></div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="glass-modal p-8 space-y-5">
+          <div class="w-10 h-1 bg-white/30 rounded-full mx-auto"></div>
+          <h3 class="text-lg font-semibold">Share with others</h3>
+          <p class="text-white/60 text-sm">Choose how you'd like to share this content.</p>
+          <div class="flex gap-6 justify-center py-2">
+            <div class="text-center space-y-2">
+              <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto">
+                <svg class="w-5 h-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+              </div>
+              <p class="text-xs text-white/60">Share</p>
+            </div>
+            <div class="text-center space-y-2">
+              <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto">
+                <svg class="w-5 h-5 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+              </div>
+              <p class="text-xs text-white/60">Copy</p>
+            </div>
+            <div class="text-center space-y-2">
+              <div class="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto">
+                <svg class="w-5 h-5 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+              </div>
+              <p class="text-xs text-white/60">Save</p>
+            </div>
+          </div>
+          <button class="glass-btn text-white w-full">Done</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification / Toast -->
+    <section class="demo-section space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight">Notifications & Toasts</h2>
+      <p class="text-white/50 text-sm">Composable with <code class="text-white/70">glass-card</code> + <code class="text-white/70">glass-shine</code></p>
+
+      <div class="space-y-4 max-w-md">
+        <div class="glass-card glass-shine !p-4 flex items-center gap-4 !rounded-xl">
+          <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          </div>
+          <div class="min-w-0">
+            <p class="text-sm font-medium">Saved successfully</p>
+            <p class="text-xs text-white/50">Your changes have been saved.</p>
+          </div>
+        </div>
+
+        <div class="glass-card glass-shine !p-4 flex items-center gap-4 !rounded-xl border-amber-400/20">
+          <div class="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+          </div>
+          <div class="min-w-0">
+            <p class="text-sm font-medium">Rate limit warning</p>
+            <p class="text-xs text-white/50">You're approaching the API limit.</p>
+          </div>
+        </div>
+
+        <div class="glass-card glass-shine !p-4 flex items-center gap-4 !rounded-xl border-red-400/20">
+          <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          </div>
+          <div class="min-w-0">
+            <p class="text-sm font-medium">Connection failed</p>
+            <p class="text-xs text-white/50">Please check your network settings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code snippet -->
+    <section class="demo-section space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight">Quick Start</h2>
+
+      <div class="glass-card glass-shine space-y-6 font-mono text-sm">
+        <div class="space-y-2">
+          <p class="text-white/50 font-sans text-xs uppercase tracking-wider font-medium">Install</p>
+          <pre class="text-emerald-300">npm install liquidglass-tailwind</pre>
+        </div>
+        <div class="space-y-2">
+          <p class="text-white/50 font-sans text-xs uppercase tracking-wider font-medium">styles.css (Tailwind v4)</p>
+          <pre class="text-blue-300">@import "tailwindcss";
+@plugin "liquidglass-tailwind";</pre>
+        </div>
+        <div class="space-y-2">
+          <p class="text-white/50 font-sans text-xs uppercase tracking-wider font-medium">Or tailwind.config (v3)</p>
+          <pre class="text-blue-300">import liquidGlass from "liquidglass-tailwind";
+
+export default {
+  plugins: [liquidGlass],
+};</pre>
+        </div>
+        <div class="space-y-2">
+          <p class="text-white/50 font-sans text-xs uppercase tracking-wider font-medium">Use</p>
+          <pre class="text-amber-300">&lt;div class="glass-card glass-shine"&gt;
+  &lt;button class="glass-btn"&gt;Click me&lt;/button&gt;
+&lt;/div&gt;</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="demo-section text-center text-white/40 text-sm pt-10 border-t border-white/10 space-y-2">
+      <p>Built with <span class="text-white/60">liquidglass-tailwind</span></p>
+      <p>
+        <a href="https://github.com/Tontoon7/liquidglass-tailwind" class="text-white/50 hover:text-white transition-colors">GitHub</a>
+        <span class="mx-2">·</span>
+        <a href="https://www.npmjs.com/package/liquidglass-tailwind" class="text-white/50 hover:text-white transition-colors">npm</a>
+      </p>
+    </footer>
+  </main>
+
+</body>
+</html>

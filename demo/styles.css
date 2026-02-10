@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@plugin "liquidglass-tailwind";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animated gradient background */
+.bg-animated {
+  background: linear-gradient(
+    -45deg,
+    #0f0c29,
+    #302b63,
+    #24243e,
+    #1a1a2e,
+    #16213e,
+    #0f3460
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 20s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating orbs for visual depth */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 12s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #667eea, #764ba2);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #f093fb, #f5576c);
+  top: 40%;
+  right: -80px;
+  animation-delay: -4s;
+}
+
+.orb-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #4facfe, #00f2fe);
+  bottom: 10%;
+  left: 20%;
+  animation-delay: -8s;
+}
+
+.orb-4 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #43e97b, #38f9d7);
+  top: 20%;
+  left: 50%;
+  animation-delay: -6s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(15px, 35px) scale(1.02); }
+}
+
+/* Section transitions */
+.demo-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-up 0.6s ease forwards;
+}
+
+.demo-section:nth-child(2) { animation-delay: 0.1s; }
+.demo-section:nth-child(3) { animation-delay: 0.2s; }
+.demo-section:nth-child(4) { animation-delay: 0.3s; }
+.demo-section:nth-child(5) { animation-delay: 0.4s; }
+.demo-section:nth-child(6) { animation-delay: 0.5s; }
+.demo-section:nth-child(7) { animation-delay: 0.6s; }
+.demo-section:nth-child(8) { animation-delay: 0.7s; }
+
+@keyframes fade-up {
+  to { opacity: 1; transform: translateY(0); }
+}
