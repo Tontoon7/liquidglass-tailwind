@@ -20,13 +20,16 @@
     "./filters.css": "./dist/filters.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "skill",
+    "scripts"
   ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
+    "postinstall": "node scripts/postinstall.mjs",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
