@@ -1,0 +1,46 @@
+/*
+ * Liquid Glass SVG Filters
+ *
+ * Include this CSS file to get the SVG filter markup injected.
+ * Usage: backdrop-filter: url(#liquid-glass-refraction) brightness(150%);
+ *
+ * NOTE: SVG filters in backdrop-filter only work in Chromium browsers.
+ * Always pair with a @supports fallback.
+ */
+
+@layer components {
+  /* Reduced transparency fallback */
+  @media (prefers-reduced-transparency: reduce) {
+    .glass-surface,
+    .glass-surface-sm,
+    .glass-surface-lg,
+    .glass-surface-xl,
+    .glass-card,
+    .glass-card-elevated,
+    .glass-nav,
+    .glass-modal {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background-color: rgba(30, 30, 30, 0.95) !important;
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .glass-btn,
+    .glass-btn-secondary,
+    .glass-btn-pill {
+      transition: none !important;
+    }
+    .glass-btn:hover,
+    .glass-btn-secondary:hover,
+    .glass-btn-pill:hover {
+      transform: none !important;
+    }
+    .glass-btn:active,
+    .glass-btn-secondary:active,
+    .glass-btn-pill:active {
+      transform: none !important;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "liquidglass-tailwind",
+  "version": "0.1.0",
+  "description": "Apple Liquid Glass design system for Tailwind CSS — glass surfaces, refraction, specular highlights, and accessible translucent UI components",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./theme": {
+      "types": "./dist/theme.d.ts",
+      "import": "./dist/theme.js",
+      "require": "./dist/theme.cjs"
+    },
+    "./filters.css": "./dist/filters.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "plugin",
+    "liquid-glass",
+    "glassmorphism",
+    "apple",
+    "ios26",
+    "design-system",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "tailwindcss": ">=3.4.0 || >=4.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0"
+  }
+}
