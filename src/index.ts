@@ -1,7 +1,7 @@
 import plugin from "tailwindcss/plugin";
 import { liquidGlassTheme } from "./theme";
 
-const liquidGlass = plugin(
+const liquidGlass: ReturnType<typeof plugin> = plugin(
   ({ addComponents, addUtilities, addBase, theme }) => {
     // Base glass surface utility
     addUtilities({

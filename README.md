@@ -148,6 +148,18 @@ cp node_modules/liquidglass-tailwind/skill/liquidglass-design.md ~/.claude/skill
 cd demo && npm install && npm run dev
 ```
 
+The demo links the package from the repository root (`file:..`) and loads its built `dist/`, so run `npm run build` at the root first.
+
+## Development
+
+```bash
+npm ci && npm ci --prefix demo
+npm run typecheck        # tsc --noEmit
+npm run lint             # ESLint (eslint.config.js) on src/
+npm run build            # tsup → dist/ (ESM, CJS, .d.ts, filters.css)
+npm run build --prefix demo
+```
+
 ## License
 
 MIT
